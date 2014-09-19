@@ -1,4 +1,4 @@
-<html>
+<!doctype html>
   
   <head>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -7,20 +7,22 @@
 <body>
   
 <form role="form" class="text-center">
-
-<div class="jumbotron">  
-  <h2><small>The</small> Indie-Go-Go <br />appointment page</h2>  
+ 
+<div>
+  <h1><small>The</small> Indie-Go-Go <br />appointment page</h1>  
   <br />
   <p>Hooray! Let's see if your appointment is listed below:</p>
   <br />
 </div>
+<div class="jumbotron"> 
  <p>
   {% for m in messages %} 
   "{{m.body}}" <br />
   {% endfor %}
   <br />
   </p>
- <div class="jumbotron"> 
+</div>
+ <div> 
   <p>
     Don't see your information above? Try submitting again     back at our main page.
    </p> 
