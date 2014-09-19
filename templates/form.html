@@ -5,22 +5,26 @@
   </head>
 
 <body>
-  
-<div id="form">
-<form method="post" action="/submit-form/"> <!--telling the form where to send user input-->
 
-  <h1>Indie-Go-Go <br />scheduler</h1> (beta)
+<form role="form" class="text-center" method="post" action="/submit-form/"> <!--telling the form where to send user input-->
+<div class="jumbotron">
+  <h1><small>The</small> Indie-Go-Go <br />scheduler <small>(beta)</small></h1> 
   <p>
   Schedule an expert to help your campaign today!
   </p>
-  
-  <label>Submit a <strong>mobile</strong> number (Please no characters ex. <a href="tel:8184854646">1.818.485.GOGO</a>):</label><input type="text" name="number" size="40" />
-  
+</div>
+  <br />
+  <br />
+  <label>Submit a mobile number (No characters example <a href="tel:8184854646">18184854646</a>):</label><br /><input type="text" name="number" placeholder="enter only a SMS capable number" size="40" />
+  <br />
+  <br />
   <p>
-  <input class="databutton" type="submit" value="Submit for help"  /> 
+  <button type="submit" class="btn btn-info btn-lg">Submit for help</button> 
   </p>
-  <p>
-  You will be connected to an Indiegogo expert within 24-hours to schedule a helpful demo and answer any questions you may have.
+  <br />
+  <br />
+  <p class="lead">
+    You will be connected to an Indiegogo expert within 24-hours to schedule <br /> a helpful demo and answer any questions you may have.
   </p>
   <p>
   You can see if you have anything scheduled yet on our <a href="http://www.indie-go-go.com/appointments" target="_blank"><strong>Appointments page</strong>.</a>
@@ -32,7 +36,7 @@
   
   
 </form>  
-</div>
+
 
 </body>
   
