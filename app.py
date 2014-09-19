@@ -1,5 +1,9 @@
 import os
-from flask import Flask, render_template, send_from_directory
+from flask import Flask
+from flask import render_template
+from flask import request, redirect, send_from_directory
+
+from twilio.rest import TwilioRestClient 
 
 # initialization
 app = Flask(__name__)
@@ -19,6 +23,18 @@ def page_not_found(e):
 @app.route("/")
 def index():
     return render_template('form.html')
+
+@app.route("/submit-form/", methods = ['POST']) 
+def submit_number():
+    number = request.form['number']
+    formatted_number = "+1" + number # Switch to your country code of choice
+    client.messages.create(to=formatted_number, from_ = twilio_number, body = "Thank you, we have received your request for a demo with! Please reply to this SMS with the best time and method to connect with you. After replying you can confirm your message was received here http://apsalar.me/appointments/") # Replace body with your message of choice
+    return redirect('/')
+  
+@app.route("/appointments/")
+def list_messages():
+    messages = client.messages.list(to=twilio_number)
+    return render_template('messages.html', messages = messages)
 
 # launch
 if __name__ == "__main__":
