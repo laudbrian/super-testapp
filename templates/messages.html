@@ -6,30 +6,33 @@
 
 <body>
   
-<form fole="form" class="text-center">
+<form role="form" class="text-center">
 
 <div class="jumbotron">  
-  <h2><small>The</small> INDIE-GO-GO <br />appointments page</h2>  
-  <br />
+  <h2><small>The</small> Indie-Go-Go <br />appointment page</h2>  
   <br />
   <p>Hooray! Let's see if your appointment is listed below:</p>
   <br />
-  <br />
 </div>
+ <p>
   {% for m in messages %} 
   "{{m.body}}" <br />
   {% endfor %}
-  
-  <br />
   <br />
   </p>
-  
-  <p>Don't see your information above? Try submitting again to our main <a href="http://www.indie-go-go.com">page.</a></p>
-  <p><b>Or...</b>Ask for Help -
+ <div class="jumbotron"> 
+  <p>
+    Don't see your information above? Try submitting again     back at our main page.
+   </p> 
+ <button type="button" class="btn btn-info"><a href="http://www.indie-go-go.com">Back to Main</a>
+ </button>
+   <br/>
+  <p>
+    <b>Or...</b>Ask for Help -
      The Indiegogo Help Desk can assist
-    <a href="http://support.indiegogo.com/hc/en-us" target="_blank">Help Center</a>
-   
-  </p>  
+    <a href="http://support.indiegogo.com/hc/en-us" target="_blank">Help Center</a> 
+  </p> 
+ </div>
 </form>
 
 </body>
