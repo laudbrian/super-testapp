@@ -6,13 +6,15 @@
 
 <body>
   
-<div id="form">
+<form fole="form" class="text-center">
 
+<div class="jumbotron">  
   <h2>INDIE-GO-GO scheduler list</h2>  
   
   <p><b>Hooray!</b> Let's see if your appointment is listed below:</p>
   <br />
   <br />
+</div>
   {% for m in messages %} 
   "{{m.body}}" <br />
   {% endfor %}
@@ -27,7 +29,7 @@
     <a href="http://support.indiegogo.com/hc/en-us" target="_blank">Help Center</a>
    
   </p>  
-</div>
+</form>
 
 </body>
   

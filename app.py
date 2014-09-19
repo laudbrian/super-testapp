@@ -3,7 +3,8 @@ from flask import Flask
 from flask import render_template
 from flask import request, redirect, send_from_directory
 
-from twilio.rest import TwilioRestClient 
+from twilio.rest import TwilioRestClient
+import twilio.twiml  
 
 # initialization
 app = Flask(__name__)
@@ -37,6 +38,30 @@ def submit_number():
 def list_messages():
     messages = client.messages.list(to=twilio_number)
     return render_template('messages.html', messages = messages)
+
+callers = {
+    "+14158675309": "Curious George",
+    "+14158675310": "Boots",
+    "+14158675311": "Virgil",
+}
+ 
+@app.route("/", methods=['GET', 'POST'])
+def hello_monkey():
+    """Say a caller's name, and play an MP3 for them."""
+ 
+    from_number = request.values.get('From', None)
+    if from_number in callers:
+        caller = callers[from_number]
+    else:
+        caller = "Monkey"
+ 
+    resp = twilio.twiml.Response()
+    # Greet the caller by name
+    resp.say("Hello " + caller)
+    # Play an MP3
+    resp.play("http://demo.twilio.com/hellomonkey/monkey.mp3")
+ 
+    return str(resp)
 
 # launch
 if __name__ == "__main__":
