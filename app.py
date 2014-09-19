@@ -30,7 +30,7 @@ def index():
 def submit_number():
     number = request.form['number']
     formatted_number = "+1" + number # Switch to your country code of choice
-    client.messages.create(to=formatted_number, from_ = twilio_number, body = "Thank you, we have received your request for a demo with! Please reply to this SMS with the best time and method to connect with you. After replying you can confirm your message was received here http://apsalar.me/appointments/") # Replace body with your message of choice
+    client.messages.create(to=formatted_number, from_ = twilio_number, body = "Thank you from Indie-Go-Go, we have received your request for assistance with your campaign! Please reply to this SMS with the best time and method to connect with you within 24 hours.") # Replace body with your message of choice
     return redirect('/')
   
 @app.route("/appointments/")
