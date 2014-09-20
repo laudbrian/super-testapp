@@ -2,9 +2,9 @@ import os
 from flask import Flask
 from flask import render_template
 from flask import request, redirect, send_from_directory
-
+import twilio.twiml 
 from twilio.rest import TwilioRestClient
-import twilio.twiml  
+ 
 
 # initialization
 app = Flask(__name__)
@@ -39,11 +39,13 @@ def list_messages():
     messages = client.messages.list(to=twilio_number)
     return render_template('messages.html', messages = messages)
 
-@app.route('/voice', methods=['POST'])
-def voice():
-    response = twiml.Response()
-    response.play("http://example.com/music/ramones.mp3")
-    return str(response)
+@app.route("/", methods=['GET', 'POST'])
+def hello_monkey():
+    """Respond to incoming requests."""
+    resp = twilio.twiml.Response()
+    resp.say("Hello Monkey, go go indie go go")
+ 
+    return str(resp)
 
 # launch
 if __name__ == "__main__":
