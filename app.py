@@ -43,7 +43,8 @@ def list_messages():
 def hello_monkey():
     """Respond to incoming requests."""
     resp = twilio.twiml.Response()
-    resp.say("Hello Monkey, go go indie go go")
+    resp.say("I am a go go Robot, if you want to make an appointment text this number")
+    resp.play("http://linode.rabasa.com/cantina.mp3")
  
     return str(resp)
 
