@@ -8,8 +8,8 @@ from twilio.rest import TwilioRestClient
 
 # initialization
 app = Flask(__name__)
-client = TwilioRestClient ('ACd009eb10fcf125279953be2d919d68dc', 'db602d472d2a0ed222f3423f4900c895') # Paste in your AccountSID and AuthToken here
-twilio_number = "+18184854646" # Replace with your Twilio number
+client = TwilioRestClient ('YOUR_ACCOUNT_SID', 'YOUR_AUTH_TOKEN') # Paste in your AccountSID and AuthToken here
+twilio_number = "+YOUR_TWILIO_NUMBER" # Replace with your Twilio number
 app.config.update(
     DEBUG = True,
 )
